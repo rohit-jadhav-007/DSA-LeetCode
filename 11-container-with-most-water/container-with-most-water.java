@@ -7,13 +7,10 @@ class Solution {
         int j = height.length-1;
 
         while(i<j){
-            if(height[i] == height[j]){
-                area = height[i] * (j-i);
-                i++;
-            } else if (height[i] > height[j]){
+            if (height[i] > height[j]){
                 area = height[j] * (j-i);
                 j--;
-            }  else if (height[i] < height[j]){
+            }  else if (height[i] <= height[j]){
                 area = height[i] * (j-i);
                 i++;
             }
