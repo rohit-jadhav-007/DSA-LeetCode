@@ -3,7 +3,7 @@ class Solution {
         if(num == 1){
             return true;
         }
-        for(int i = 1;i<num;i++){
+        for(int i = 2;i<num;i++){
             if(i*i == num){
                 return true;
             } else if(i*i > num){
