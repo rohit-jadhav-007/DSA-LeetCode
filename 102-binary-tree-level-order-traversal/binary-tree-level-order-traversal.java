@@ -22,7 +22,7 @@ class Solution {
             return result;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new ArrayDeque<>();
 
         queue.add(root);
 
