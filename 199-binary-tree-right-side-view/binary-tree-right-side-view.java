@@ -15,29 +15,22 @@
  */
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
-
-        List<Integer> result = new ArrayList<>();
-
-        recursion(root, 0, result);
-
-        return result;
+        List<Integer> list = new ArrayList<>();
+        int level = 0;
+        recursion(root, level, list);
+        return list;
     }
 
-    public void recursion(TreeNode root, int level, List<Integer> res) {
+    public void recursion(TreeNode curr, int level, List<Integer> list){
 
-        if (root == null) {
+        if(curr == null){
             return;
         }
 
-        // If this is the first node visited at this level
-        if (res.size() == level) {
-            res.add(root.val);
+        if(list.size() == level){
+            list.add(curr.val);
         }
-
-        // Traverse right child first
-        recursion(root.right, level + 1, res);
-
-        // Then traverse left child
-        recursion(root.left, level + 1, res);
+        recursion(curr.right, level+1, list);
+        recursion(curr.left, level+1, list);
     }
 }
